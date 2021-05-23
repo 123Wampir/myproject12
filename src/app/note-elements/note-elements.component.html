@@ -1,0 +1,8 @@
+<div class="container" id="container">
+    <div class="note-block" *ngFor="let item of notes" id={{item.noteId}}>
+      <div class="note-title">{{item.noteTitle}}</div>
+      <div class="note-text">{{item.noteText}}</div>
+      <div class="note-date">{{item.noteCreateTime + "  " + item.noteCreateDate}}</div>
+      <button class="note-delete" (click)="onDeleteNote(item.noteId)">Delete Note</button>
+    </div>
+  </div>

@@ -1,0 +1,12 @@
+<div class="note-form">
+    <div class="note-form-title">
+      <div class="note-title-label">Note title</div>
+      <input type="text" class="title" #noteTitle>
+    </div>
+    <div class="note-form-text">
+      <div class="note-text-label">Your note</div>
+      <textarea name="note" id="note" class="note" cols="30" rows="10" #noteText></textarea>
+    </div>
+    <button class="note-create" (click)="onCreateNote(noteTitle,noteText)">Create Note</button>
+    <button class="note-clear" (click)="clearData(noteTitle,noteText);">Clear Note</button>
+  </div>
