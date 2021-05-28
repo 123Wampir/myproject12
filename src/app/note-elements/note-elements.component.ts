@@ -11,12 +11,16 @@ export class NoteElementsComponent implements OnInit {
   constructor() { }
   @Input() notes: Note[] = [];
 
-  @Output() deleteNote = new EventEmitter<number>();
+  @Output() DeleteNote = new EventEmitter<number>();
+  @Output() ChangeNote = new EventEmitter<number>();
 
   ngOnInit(): void {
   }
 
   onDeleteNote(id: number) {
-    this.deleteNote.emit(id);
+    this.DeleteNote.emit(id);
+  }
+  onChangeNote(id:number){
+    this.ChangeNote.emit(id);
   }
 }

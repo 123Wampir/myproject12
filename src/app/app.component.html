@@ -8,7 +8,7 @@
   <title>Document</title>
 </head>
 <body>
-  <app-note-form (CreateNote)="onCreateNote($event)"></app-note-form>
-  <app-note-elements [notes]="getNotes()" (deleteNote)="onDeleteNote($event)"></app-note-elements>
+  <app-note-form [note]="noteToChange" [onEdit]="onEdit" (CreateNote)="onCreateNote($event)" (UpdateNote)="onUpdateNote($event)" ></app-note-form>
+  <app-note-elements [notes]="getNotes()" (ChangeNote)="changeNote($event)" (DeleteNote)="onDeleteNote($event)"></app-note-elements>
 </body>
 </html>
