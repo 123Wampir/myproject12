@@ -10,6 +10,7 @@ export class NoteElementsComponent implements OnInit {
 
   constructor() { }
   @Input() notes: Note[] = [];
+  @Input() onEdit = false;
 
   @Output() DeleteNote = new EventEmitter<number>();
   @Output() ChangeNote = new EventEmitter<number>();
@@ -20,7 +21,7 @@ export class NoteElementsComponent implements OnInit {
   onDeleteNote(id: number) {
     this.DeleteNote.emit(id);
   }
-  onChangeNote(id:number){
+  onChangeNote(id: number) {
     this.ChangeNote.emit(id);
   }
 }

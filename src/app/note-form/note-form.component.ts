@@ -9,8 +9,8 @@ import { Note } from 'src/app/shared/note.model'
 export class NoteFormComponent implements OnInit {
 
 
-  @Input()  note:Note=new Note("","");
-  @Input()  onEdit=false;
+  @Input() note: Note = new Note("", "");
+  @Input() onEdit = false;
 
   @Output() CreateNote = new EventEmitter<Note>();
   @Output() UpdateNote = new EventEmitter<Note>();
@@ -33,16 +33,13 @@ export class NoteFormComponent implements OnInit {
     this.note.noteTitle = "";
     this.note.noteText = "";
   }
-  onChangeNote(){
+  onChangeNote() {
     console.log(this.note);
     if (this.note.noteTitle != null && this.note.noteTitle != "") {
       let note = new Note(this.note.noteTitle, this.note.noteText);
-      note.noteId=this.note.noteId;
-      note.noteCreateTime=this.note.noteCreateTime;
-      note.noteCreateDate=this.note.noteCreateDate;
-      console.log("<KZNM")
-      console.log(note);
-
+      note.noteId = this.note.noteId;
+      note.noteCreateTime = this.note.noteCreateTime;
+      note.noteCreateDate = this.note.noteCreateDate;
       this.UpdateNote.emit(note);
       this.clearData();
     }
